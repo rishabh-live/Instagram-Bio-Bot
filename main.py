@@ -4,23 +4,13 @@ USERNAME = "<Your User Name>"
 PASSWORD = "<Your Account Password>"
 
 
-
-
-
-
-print("Starting Import\r")
-
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import random
 import json
 
-print("Starting Chrome\r")
-
 driver = webdriver.Chrome('./chromedriver')
-
-
 
 def checkLikes():
     #driver = webdriver.Chrome('./chromedriver')
@@ -33,13 +23,12 @@ def checkLikes():
         data = json.load(f)
 
     #Check Values
-    if data['likes'] < totalNo:
+    if data['likes'] != totalNo:
         data['updated'] = "TRUE"
         data['likes'] = totalNo
     else:
        data['updated'] = "FALSE" 
 
-    
 
     #Upadte record with new values
     with open('./records.json', 'w+') as json_file:
@@ -60,10 +49,6 @@ def perform():
     password.send_keys(PASSWORD)
     sleep(random.randint(0,2))
     buttonSubmit.send_keys(Keys.RETURN)
-
-    
-
-
 
     print("Logging Completed")
 
