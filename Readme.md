@@ -1,6 +1,6 @@
 ### Required
 1) Python 3
-2) Slenium installed or you can run 'pip install selenium'
+2) Slenium installed or you can run `pip install selenium`
 
 ### How to Use?
 1) Edit the Post Id and the put the credentials needed.
